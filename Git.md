@@ -45,7 +45,7 @@ git push origin feature_branch
 
 Pull code mới nhất:
 ```bash
-git pull --rebase
+git pull --rebase origin main
 ```
 
 Sau lệnh này, các commit ở local của bạn sẽ được đặt sau các commit được pull từ trên repository.
@@ -124,3 +124,4 @@ git stash pop
     git config --global user.name "myusername"
     git config --global user.email "me@gmail.com"
     ```
+
