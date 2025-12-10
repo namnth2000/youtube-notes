@@ -58,19 +58,27 @@ git fetch
 ## 3. Trong những ngày hoảng loạn (code bị conflict)
 
 ### 3.1. Reset
-Trong quá trình làm việc, có thể bạn làm lỗi và cần revert code về một commit (phiên bản) nào đó, bạn có 3 lựa chọn khi sử dụng `git reset`
+Trong quá trình làm việc, có thể bạn làm lỗi và cần revert code về một commit (phiên bản) nào đó, bạn thể sử dụng `git reset`
 
-1. Reset code về phiên bản `commit_id`, giữ lại code của bạn ở trong stage để bạn có thể commit lại:
+1. Reset về phiên bản trước khi xảy ra merge conflict:
+   ```bash
+   git reset --merge
+   
+   # Dùng lệnh này để hủy bỏ việc merge
+   git rebase --abort
+   ```
+
+2. Reset code về phiên bản `commit_id`, giữ lại code của bạn ở trong stage để bạn có thể commit lại:
     ```bash
     git reset --soft commit_id
     ```
 
-2. Reset code về phiên bản `commit_id`, giữ lại code của bạn ở trạng thái unstaged (cần dùng `git add` để chuyển nó vào stage trước khi commit):
+3. Reset code về phiên bản `commit_id`, giữ lại code của bạn ở trạng thái unstaged (cần dùng `git add` để chuyển nó vào stage trước khi commit):
     ```bash
     git reset --mixed commit_id
     ```
 
-3. Reset code về phiên bản `commit_id` và xóa mọi thay đổi:
+4. Reset code về phiên bản `commit_id` và xóa mọi thay đổi:
     ```bash
     git reset --hard commit_id
     ```
@@ -124,5 +132,6 @@ git stash pop
     git config --global user.name "myusername"
     git config --global user.email "me@gmail.com"
     ```
+
 
 
