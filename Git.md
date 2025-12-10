@@ -67,7 +67,7 @@ Trong quá trình làm việc, có thể bạn làm lỗi và cần revert code 
 
 2. Reset code về phiên bản `commit_id`, giữ lại code của bạn ở trạng thái unstaged (cần dùng `git add` để chuyển nó vào stage trước khi commit):
     ```bash
-    git reset --soft commit_id
+    git reset --mixed commit_id
     ```
 
 3. Reset code về phiên bản `commit_id` và xóa mọi thay đổi:
@@ -124,4 +124,5 @@ git stash pop
     git config --global user.name "myusername"
     git config --global user.email "me@gmail.com"
     ```
+
 
